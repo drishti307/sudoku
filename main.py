@@ -10,6 +10,8 @@ def main():
             x=int(input())
             y=int(input())
             num=int(input())
+            if x>n or y>n or num>n:
+                break
             g.AddEdge(x,y,num)
 
         except Exception as e:
