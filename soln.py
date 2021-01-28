@@ -1,4 +1,4 @@
-
+import math
 def findEmpty(bd):
     n=len(bd)
     for i in range(n):
@@ -10,9 +10,10 @@ def findEmpty(bd):
 
 def isvalid(bd, num, pos):
     #num is the number entered, pos is a tuple (x, y) poitning to an empty position
-
+    n=len(bd)
+    rn=int(math.sqrt(n))
     #checking row and column
-    for i in range (len(bd)):
+    for i in range (n):
         if bd[pos[0]][i]==num and i!= pos[1]:
             return False
 
@@ -20,14 +21,12 @@ def isvalid(bd, num, pos):
             return False
 
         
-    block_x=pos[0]//3
-    block_y=pos[1]//3
-
-    for i in range(block_y*3, block_y*3 +3):
-        for j in range(block_x*3, block_x*3 +3):
+    block_x=int(pos[1]//rn)
+    block_y=int(pos[0]//rn)
+    for i in range(block_y*rn, block_y*rn+rn):
+        for j in range(block_x*rn, block_x*rn +rn):
             if bd[i][j]==num and (i,j) != pos:
                 return False
-
     
     return True
 
@@ -41,8 +40,8 @@ def solve(bd):
     else: 
         r, c = find
 
-    for i in range(1, 10):
-        if isvalid(bd, i, find):
+    for i in range(1, len(bd)+1):
+        if isvalid(bd, i, (r,c)):
             bd[r][c]=i
 
             if solve(bd):

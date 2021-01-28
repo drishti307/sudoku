@@ -22,6 +22,13 @@ class Graph:
 
         return self
 
+    def GraphtoBoard(self, bd):
+        for i in range(self.__n):
+            for j in range(self.__n):
+                bd[i][j]=self.__adj[i][j]
+
+        return bd
+
     def DispAdj(self):
         print("Adjacency Matrix is: \n")
         for i in range(0, self.__n):
