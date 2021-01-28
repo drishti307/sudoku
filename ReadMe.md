@@ -3,11 +3,11 @@ This is a Sudoku solver based on Backtracking.
 It takes a custom puzzle as input and returns the solved puzzle
 
 ### Files:
-**board.py**: Conatins functions related to the sudoku board, printing, initialization
-**graph.py**: Contains a class graph which takes an adj matrix as input to create board
-**main.py**: contains main function to run program
-**soln.py**: Contains Backtracking Algorithm
-**render_p.py**: Renders the Gui on pygame _(in progress)_
+* **board.py**: Conatins functions related to the sudoku board, printing, initialization
+* **graph.py**: Contains a class graph which takes an adj matrix as input to create board
+* **main.py**: contains main function to run program
+* **soln.py**: Contains Backtracking Algorithm
+* **render_p.py**: Renders the Gui on pygame _(in progress)_
 
 ### Running the Application
 1) Clone the repository in your Local System using `git clone https://github.com/drishti307/sudoku.git`
