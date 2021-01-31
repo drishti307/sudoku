@@ -50,3 +50,35 @@ def solve(bd):
             bd[r][c]=0
 
     return False
+
+dom=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
+domain=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
+
+def in_dom(i):
+    if i in domain:
+        return True
+    else:
+        return False
+
+def sol_fwd_check(bd):
+    global domain
+    find = findEmpty(bd)
+
+    if not find:
+        return True
+
+    else: 
+        r, c = find
+
+    for i in range(1, len(bd)+1):
+        if in_dom(i) and isvalid(bd, i, (r,c)):
+            bd[r][c]=i
+            domain.remove(i)
+
+            if solve(bd):
+                return True
+
+            bd[r][c]=0
+            domain=dom
+
+    return False
