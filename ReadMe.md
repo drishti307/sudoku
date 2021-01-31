@@ -23,5 +23,5 @@ Press 1 to give custom input, 2 to run algorithm on random 9x9 grid
     iii) To exit input system, enter any value greater than your dimensions
 
 ### Output
- Sudoku grid entered (before solving)
+ Sudoku grid entered (before solving), and 
  Sudoku grid after it is solved
